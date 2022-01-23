@@ -122,12 +122,19 @@ wywolanie();
 ////////////// zad 5 ///////////////
 ////////////////////////////////////
 
-fetch("https://api.nbp.pl/api/exchangerates/rates/a/nok/?format=json")
+document.getElementById("getDataFromApi").addEventListener("click", () => {
+    getData();
+})
+
+
+function getData(){
+    fetch("https://api.jsonbin.io/b/5ec2beca2bb52645e55330ba")
     .then( resp => resp.json())
     .then( data => {
-        console.log(data.rates[0].mid);
-        document.getElementById("midnok").textContent = data.rates[0].mid;
+        console.log(data);
+        data.map( el => console.log(el.name))
     })
+}
 
 
-// http://api.nbp.pl/api/exchangerates/rates/a/nok/?format=json
+// https://api.nbp.pl/api/exchangerates/rates/a/nok/?format=json
