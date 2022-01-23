@@ -93,10 +93,9 @@
 ////////////// zad 4 ///////////////
 ////////////////////////////////////
 
-const news = 5;
 const myPromise = () => {
     return new Promise(resolve => {
-        resolve(news);
+        resolve(95);
     })
 }
 const addFive = num => {
@@ -112,9 +111,23 @@ const output = result => {
 
 async function wywolanie() {
     let zmienna1 = await myPromise();
-    let zmienna2 = addFive(zmienna1)
-    let zmienna3 = muplityBy(zmienna2)
+    let zmienna2 = addFive(zmienna1);
+    let zmienna3 = muplityBy(zmienna2);
     output(zmienna3)
 }
 
 wywolanie();
+
+////////////////////////////////////
+////////////// zad 5 ///////////////
+////////////////////////////////////
+
+fetch("https://api.nbp.pl/api/exchangerates/rates/a/nok/?format=json")
+    .then( resp => resp.json())
+    .then( data => {
+        console.log(data.rates[0].mid);
+        document.getElementById("midnok").textContent = data.rates[0].mid;
+    })
+
+
+// http://api.nbp.pl/api/exchangerates/rates/a/nok/?format=json
