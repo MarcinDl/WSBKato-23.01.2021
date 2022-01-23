@@ -1,25 +1,44 @@
-.display_none{
-    display: none; 
-}
 
-.container{
-display: flex;
-}
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
 
-.container div{
-padding: 10px 20px;
-margin: 0 5px;
-background-color: grey;
+body {
+  background:whitesmoke;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  font-family:Helvetica;
+  text-align:center;
 }
-
-.tabsy{
-width: 30%;
-margin: 10px 0 0 10px;
-background-color: lightgray;
-padding: 10px;
+section {
+  display:flex;
+  flex-direction:column;
 }
-
-.pogrubienie{
-font-weight: bold;
-text-decoration: underline red;
+label {
+  font-family: 'IBM Plex Mono', monospace;
+  color:#607d8b;
+  font-size:.75em;
+  letter-spacing:2px;
+  margin-bottom:20px;
+}
+input {
+  font-size:2em;
+  padding:15px 15px;
+  border-radius:20px;
+  border:none;
+  transition:all ease .4s;
+  border:3px solid #607d8b;
+}
+input:focus {
+  outline: none;
+}
+.correct {
+  fill:#607d8b;
+  margin-bottom:25px;
+}
+.animate {
+  transition:all 0.4s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  fill:green;
+  transform:scale(1.4);
 }

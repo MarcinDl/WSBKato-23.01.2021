@@ -1,19 +1,7 @@
-const tabdwa = document.getElementById("tabdwa");
-const tabjeden = document.getElementById("tabjeden");
-const jeden = document.getElementById("jeden");
-const dwa = document.getElementById("dwa");
+document.querySelector("button").addEventListener("click",function(){
+    console.log(document.getElementById("name").value.length);
 
-tabdwa.addEventListener("click", function() {
-    this.classList.add("pogrubienie");
-    tabjeden.classList.remove("pogrubienie");
-    jeden.classList.add("display_none");
-    dwa.classList.remove("display_none");
+    if (document.getElementById("name").value.length == 4){
+        document.getElementById("icon").classList.add("animate")
+    }
 })
-
-tabjeden.addEventListener("click", function() {
-    this.classList.add("pogrubienie");
-    tabdwa.classList.remove("pogrubienie");
-    dwa.classList.add("display_none");
-    jeden.classList.remove("display_none");
-})
-
