@@ -31,24 +31,60 @@
 ////////////////////////////////////
 ////////////// zad 2 ///////////////
 ////////////////////////////////////
-const news = 5;
-const myPromise = () => {
-    return new Promise(resolve => {
-        resolve(news);
+
+// const news = 5;
+// const myPromise = () => {
+//     return new Promise(resolve => {
+//         resolve(news);
+//     })
+// }
+// const addFive = num => {
+//     return num + 5;
+// }
+// const muplityBy = num => {
+//     return num * 77;
+// }
+
+// const output = result => {
+//     console.log(result)
+// }
+
+// myPromise()
+//     .then(addFive)
+//     .then(muplityBy)
+//     .then(output)
+
+////////////////////////////////////
+////////////// zad 3 ///////////////
+////////////////////////////////////
+
+
+// w pierwszym promisie zmienną globalną powiększamy o pięć (promise ma trwać 5 sekund)
+// w drugim promisie otrzymaną nową wartość (10) powiększamy o 20 (promise ma trwać 10 sekund)
+
+let news = 5;
+
+const firstDelay = () => {
+    return new Promise( (resolve, reject) => {
+        setTimeout( () => {
+            news = news + 5;
+            resolve(news);
+        },5000)
     })
 }
-const addFive = num => {
-    return num + 5;
-}
-const muplityBy = num => {
-    return num * 77;
+const secondDelay = (fromFirstDelay) => {
+    return new Promise( (resolve, reject) => {
+        setTimeout( () => {
+            fromFirstDelay = fromFirstDelay + 20;
+            resolve(fromFirstDelay);
+        },10000)
+    })
 }
 
 const output = result => {
-    console.log(result)
+    console.log(result);
 }
 
-myPromise()
-    .then(addFive)
-    .then(muplityBy)
+firstDelay()
+    .then(secondDelay)
     .then(output)
