@@ -1,0 +1,25 @@
+.display_none{
+    display: none; 
+}
+
+.container{
+display: flex;
+}
+
+.container div{
+padding: 10px 20px;
+margin: 0 5px;
+background-color: grey;
+}
+
+.tabsy{
+width: 30%;
+margin: 10px 0 0 10px;
+background-color: lightgray;
+padding: 10px;
+}
+
+.pogrubienie{
+font-weight: bold;
+text-decoration: underline red;
+}
