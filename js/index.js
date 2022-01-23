@@ -1,19 +1,54 @@
-const sklep_smyk = document.getElementById("sklep_smyk");
+////////////////////////////////////
+////////////// zad 1 ///////////////
+////////////////////////////////////
 
-sklep_smyk.addEventListener("click",function(){
+// function firstDelay() {
+//     //ciało funkcji
+//     return new Promise( (resolve,reject) =>{
+//         setTimeout( () => {
+//             console.log("jeden");
+//             resolve();
+//         },3000)
+//     })
+// }
+// function secondDelay() {
+//     return new Promise( (resolve,reject) =>{
+//         setTimeout( () => {
+//             console.log("dwa");
+//         },6000)
+//     })
+// }
+// function start() {
+//     return new Promise( (resolve,reject) =>{
+//         resolve();
+//     })
+// }
+// start()
+//     .then(firstDelay)
+//     .then(secondDelay)
 
-    let cubeArr = [document.getElementById("gora"),document.getElementById("przod"),document.getElementById("bok")];
-    let cubeArr2 = [...sklep_smyk.children];
-    let cubeArr3 = Array.from(sklep_smyk.children);
 
-    cubeArr3.forEach( item => {
-        item.style = '';
+////////////////////////////////////
+////////////// zad 2 ///////////////
+////////////////////////////////////
+const news = 5;
+const myPromise = () => {
+    return new Promise(resolve => {
+        resolve(news);
+    })
+}
+const addFive = num => {
+    return num + 5;
+}
+const muplityBy = num => {
+    return num * 77;
+}
 
-        if (item.classList.contains("active")){
-            item.classList.add("notActive");
-            item.classList.remove("active");
-        } else {
-            item.classList.toggle("active");
-        }
-    } )
-})
+const output = result => {
+    console.log(result)
+}
+
+myPromise()
+    .then(addFive)
+    .then(muplityBy)
+    .then(output)
