@@ -1,7 +1,19 @@
-document.querySelector("button").addEventListener("click",function(){
-    console.log(document.getElementById("name").value.length);
+const sklep_smyk = document.getElementById("sklep_smyk");
 
-    if (document.getElementById("name").value.length == 4){
-        document.getElementById("icon").classList.add("animate")
-    }
+sklep_smyk.addEventListener("click",function(){
+
+    let cubeArr = [document.getElementById("gora"),document.getElementById("przod"),document.getElementById("bok")];
+    let cubeArr2 = [...sklep_smyk.children];
+    let cubeArr3 = Array.from(sklep_smyk.children);
+
+    cubeArr3.forEach( item => {
+        item.style = '';
+
+        if (item.classList.contains("active")){
+            item.classList.add("notActive");
+            item.classList.remove("active");
+        } else {
+            item.classList.toggle("active");
+        }
+    } )
 })
